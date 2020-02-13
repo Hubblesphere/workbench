@@ -13,9 +13,11 @@ class InstallOpenpilot extends PureComponent {
       "cd /data",
       "cp -rf ./openpilot ./openpilot.bak",
       "rm -rf ./openpilot",
-      "git clone %gitUrl% openpilot",
-      "cd openpilot",
-      "git checkout %gitBranch%"
+      "git clone %gitUrl%",
+      "-b %gitBranch%,
+      "--depth=1"
+      "rm -rf openpilot"
+      "reboot"
     ];
   }
   
